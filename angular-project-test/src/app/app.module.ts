@@ -6,16 +6,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { GridComponent } from './grid/grid.component';
+import { CompanyComponent } from './company/company.component';
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    GridComponent
+    GridComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
