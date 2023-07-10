@@ -15,15 +15,20 @@ export class CompanyComponent {
   constructor(private http: HttpClient) {}
 
   searchCompany(): void {
+
     if (!this.searchTerm) {
       return;
     }
 
-    const endpoint = 'http://localhost:8080/woke-company/find-company';
-    const params = { keyword: this.searchTerm };
+    const endpoint = 'http://localhost:8080/woke-company/find-company?keyword=' + this.searchTerm;    
 
-    this.http.get(endpoint, { params }).subscribe((response) => {
-      this.searchResults = response; // Store the API response in the variable
+    this.http.get(endpoint).subscribe((response) => {
+
+      if (Array.isArray(response) && response.length > 0) {
+        this.searchResults = response;
+      } else {
+        this.searchResults = [];
+      }     
     });
   }
 }

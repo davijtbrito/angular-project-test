@@ -2,11 +2,15 @@
 <input type="text" [(ngModel)]="searchTerm" placeholder="Enter a keyword" />
 <button (click)="searchCompany()">Search</button>
 
-<div *ngIf="searchResults">
-    <h3>Search Results</h3>
+<h3>Search Results</h3>
+  <div *ngIf="searchResults.length > 0; else noValues">    
     <ul>
       <li *ngFor="let result of searchResults">{{ result.companyName }} | {{ result.country }} | {{ result.netWorth }}</li>
     </ul>
   </div>
 
-  <h4>PS: Remember to verify if the backend is running</h4>
+  <ng-template #noValues>
+    <p>There are no values.</p>
+  </ng-template>
+
+<h4>PS: Remember to verify if the backend is running</h4>
