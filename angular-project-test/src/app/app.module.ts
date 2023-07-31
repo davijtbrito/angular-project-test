@@ -9,6 +9,7 @@ import { GridComponent } from './grid/grid.component';
 import { CompanyComponent } from './company/company.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
+import { SharedDataModule } from './shared-data/shared-data.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    SharedDataModule,
     AppRoutingModule
   ],
   providers: [],
