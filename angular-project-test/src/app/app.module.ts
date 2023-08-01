@@ -10,6 +10,7 @@ import { CompanyComponent } from './company/company.component';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { SharedDataModule } from './shared-data/shared-data.module';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { SharedDataModule } from './shared-data/shared-data.module';
     HomeComponent,
     AboutComponent,
     GridComponent,
-    CompanyComponent
+    CompanyComponent,
+    ProductListComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
