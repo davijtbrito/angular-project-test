@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { GridComponent } from './grid/grid.component';
+import { HomeComponent } from './layout-examples/home/home.component';
+import { AboutComponent } from './layout-examples/about/about.component';
+import { GridComponent } from './angular-components/grid/grid.component';
 import { CompanyComponent } from './company/company.component';
 import { ParentComponent } from './shared-data/parent/parent.component';
 import { ProductListComponent } from './product-list/product-list.component';
