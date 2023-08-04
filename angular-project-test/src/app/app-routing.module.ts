@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { GridComponent } from './grid/grid.component';
-import { CompanyComponent } from './company/company.component';
+import { HomeComponent } from './layout-examples/home/home.component';
+import { AboutComponent } from './layout-examples/about/about.component';
+
 import { ParentComponent } from './shared-data/parent/parent.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './angular-components/product-list/product-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },  // Home page route
-  { path: 'about', component: AboutComponent },  // About page route
-  { path: 'grid', component: GridComponent },  // Grid grid route
-  { path: 'parent', component: ParentComponent},
-  { path: 'product', component: ProductListComponent},
-  { path: 'find-company', component: CompanyComponent }  
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },  
+  { path: 'parent', component: ParentComponent},  
+  { path: 'product', component: ProductListComponent}  
 ];
 
 @NgModule({
