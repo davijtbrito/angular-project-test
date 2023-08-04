@@ -4,7 +4,7 @@ import { HomeComponent } from './layout-examples/home/home.component';
 import { AboutComponent } from './layout-examples/about/about.component';
 
 import { ParentComponent } from './shared-data/parent/parent.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './angular-components/product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
