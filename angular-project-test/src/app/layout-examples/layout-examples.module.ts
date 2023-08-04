@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 
+
 @NgModule({
   declarations: [HomeComponent, AboutComponent],
-  imports: [
-    FormsModule,
+  imports: [    
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     CommonModule
   ],
