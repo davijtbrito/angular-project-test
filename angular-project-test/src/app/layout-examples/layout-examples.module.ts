@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AngularComponentsModule } from '../angular-components/angular-components.module';
+import { LayoutExamplesRoutingModule } from './layout-examples-routing.module';
+import { AngularComponentsRoutingModule } from '../angular-components/angular-components-routing.module';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent],
@@ -14,6 +16,8 @@ import { AngularComponentsModule } from '../angular-components/angular-component
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    LayoutExamplesRoutingModule,
+    AngularComponentsRoutingModule,    
     AngularComponentsModule,
     CommonModule
   ],

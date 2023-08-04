@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
-  { path: 'grid', component: GridComponent },
+  { path: 'grid', component: GridComponent, },
 ];
 
 @NgModule({
