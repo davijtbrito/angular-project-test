@@ -1,30 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { GridComponent } from './grid/grid.component';
-import { CompanyComponent } from './company/company.component';
-import { FormsModule } from '@angular/forms'; 
-import { HttpClientModule } from '@angular/common/http';
+
 import { SharedDataModule } from './shared-data/shared-data.module';
+import { ProductListComponent } from './angular-components/product-list/product-list.component';
+import { AngularComponentsModule } from './angular-components/angular-components.module';
+import { LayoutExamplesModule } from './layout-examples/layout-examples.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    GridComponent,
-    CompanyComponent
+    AppComponent,    
+    ProductListComponent
+
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
+    BrowserModule,    
     HttpClientModule,
     SharedDataModule,
+    AngularComponentsModule,
+    LayoutExamplesModule,
     AppRoutingModule
   ],
   providers: [],
