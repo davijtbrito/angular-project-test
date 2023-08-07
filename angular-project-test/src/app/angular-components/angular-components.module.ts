@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { GridComponent } from './grid/grid.component';
 import { AngularComponentsRoutingModule } from './angular-components-routing.module';
 import { AgGridModule } from 'ag-grid-angular';
+import { AgGridExampleComponent } from './ag-grid-example/ag-grid-example.component';
 
 @NgModule({
   declarations: [
-    GridComponent
+    GridComponent,
+    AgGridExampleComponent
   ],
   imports: [    
     BrowserModule,
@@ -20,6 +22,6 @@ import { AgGridModule } from 'ag-grid-angular';
     AngularComponentsRoutingModule,
     CommonModule
   ],
-  exports: [GridComponent]
+  exports: [GridComponent, AgGridExampleComponent]
 })
 export class AngularComponentsModule { }
