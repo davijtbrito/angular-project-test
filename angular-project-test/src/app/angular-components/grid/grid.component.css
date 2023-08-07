@@ -1,0 +1,40 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+/* Apply custom styles to the ag-Grid */
+.ag-theme-alpine {
+    display: block;
+  }
+  
+  /* Custom styles for the header row */
+  .ag-header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Custom styles for the header cells */
+  .ag-header-cell {
+    border-bottom: 2px solid #ccc;
+  }
+  
+  /* Custom styles for the rows */
+  .ag-row {
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Custom styles for the cells */
+  .ag-cell {
+    padding: 5px;
+  }
+  
+  /* Custom styles for specific cells based on class name */
+  .custom-highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+  
+  /* Custom styles for specific cells based on a condition */
+  .ag-theme-alpine .custom-italic {
+    font-style: italic;
+  }
+  

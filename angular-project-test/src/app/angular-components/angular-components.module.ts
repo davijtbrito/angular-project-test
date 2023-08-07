@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GridComponent } from './grid/grid.component';
 import { AngularComponentsRoutingModule } from './angular-components-routing.module';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AngularComponentsRoutingModule } from './angular-components-routing.mod
   imports: [    
     BrowserModule,
     FormsModule,
+    AgGridModule,
     HttpClientModule,
     AngularComponentsRoutingModule,
     CommonModule
