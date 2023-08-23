@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { GridComponent } from './grid/grid.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AgGridExampleComponent } from './ag-grid-example/ag-grid-example.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 const routes: Routes = [
-  { path: 'grid', component: GridComponent, },
-  { path: 'product-list', component: ProductListComponent, },
-  { path: 'ag-grid', component: AgGridExampleComponent, },
+  { path: 'grid', component: GridComponent },
+  { path: 'product-list', component: ProductListComponent },
+  { path: 'ag-grid', component: AgGridExampleComponent },
+  { path: 'stepper', component: StepperComponent }
 ];
 
 @NgModule({
