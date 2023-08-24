@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormDataService } from '../form-data.service';
 
 @Component({
@@ -8,4 +8,5 @@ import { FormDataService } from '../form-data.service';
 })
 export class StepOneComponent {
   constructor(protected formService: FormDataService) {}
+  
 }
