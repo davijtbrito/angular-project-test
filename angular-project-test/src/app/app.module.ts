@@ -10,6 +10,7 @@ import { SharedDataModule } from './shared-data/shared-data.module';
 import { ProductListComponent } from './angular-components/product-list/product-list.component';
 import { AngularComponentsModule } from './angular-components/angular-components.module';
 import { LayoutExamplesModule } from './layout-examples/layout-examples.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LayoutExamplesModule } from './layout-examples/layout-examples.module';
     SharedDataModule,
     AngularComponentsModule,
     LayoutExamplesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
