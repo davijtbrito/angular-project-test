@@ -14,16 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { StepOneComponent } from './stepper/step-one/step-one.component';
-
-
-
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
     GridComponent,
     AgGridExampleComponent,
     StepperComponent,
-    StepOneComponent
+    StepOneComponent,
+    AutoCompleteComponent
   ],
   imports: [    
     BrowserModule,
@@ -31,6 +31,8 @@ import { StepOneComponent } from './stepper/step-one/step-one.component';
     MatInputModule,    
     MatButtonModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
     FormsModule,    
     ReactiveFormsModule,
     AgGridModule,
