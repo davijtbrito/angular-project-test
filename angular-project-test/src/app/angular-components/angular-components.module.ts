@@ -16,6 +16,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { StepOneComponent } from './stepper/step-one/step-one.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DynamicSectionComponent } from './dynamic-section/dynamic-section.component';
+import { HostComponent } from './host/host.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     AgGridExampleComponent,
     StepperComponent,
     StepOneComponent,
-    AutoCompleteComponent
+    AutoCompleteComponent,
+    DynamicSectionComponent,
+    HostComponent
   ],
   imports: [    
     BrowserModule,
