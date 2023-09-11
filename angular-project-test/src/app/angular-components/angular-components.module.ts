@@ -18,6 +18,8 @@ import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DynamicSectionComponent } from './dynamic-section/dynamic-section.component';
 import { HostComponent } from './host/host.component';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { HostComponent } from './host/host.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatAutocompleteModule,
+    MatAutocompleteModule,    
+    MatCardModule,    
     FormsModule,    
     ReactiveFormsModule,
     AgGridModule,

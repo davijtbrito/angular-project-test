@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 import { DynamicSectionComponent } from '../dynamic-section/dynamic-section.component';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-host',
@@ -10,6 +11,8 @@ export class HostComponent implements AfterViewInit{
 
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef })
   dynamicComponentContainer: ViewContainerRef | undefined;
+
+  products: Product[] = [];
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
   
@@ -25,7 +28,11 @@ export class HostComponent implements AfterViewInit{
 
        // Listen for the event emitted by DynamicComponent
       componentRef.instance.createDynamicComponentEvent.subscribe(() => {
-      this.createDynamicComponent();
+        this.createDynamicComponent();
+        
+        this.products.push(componentRef.instance.product);
+        console.log('Total product: ' + this.products.length);
+
       }); 
       this.dynamicComponentContainer.insert(componentRef.hostView);
     }        
