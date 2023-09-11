@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 import { DynamicSectionComponent } from '../dynamic-section/dynamic-section.component';
 
 @Component({
@@ -6,12 +6,14 @@ import { DynamicSectionComponent } from '../dynamic-section/dynamic-section.comp
   templateUrl: './host.component.html',
   styleUrls: ['./host.component.css']
 })
-export class HostComponent {
+export class HostComponent implements AfterViewInit{
 
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef })
   dynamicComponentContainer: ViewContainerRef | undefined;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  
+  ngAfterViewInit(): void {
     this.createDynamicComponent();
   }
 
@@ -19,13 +21,13 @@ export class HostComponent {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(DynamicSectionComponent);
 
     if (this.dynamicComponentContainer !== undefined){
-      const componentRef = componentFactory.create(this.dynamicComponentContainer.parentInjector);
-      this.dynamicComponentContainer.insert(componentRef.hostView);
+      const componentRef = componentFactory.create(this.dynamicComponentContainer.parentInjector);      
 
        // Listen for the event emitted by DynamicComponent
       componentRef.instance.createDynamicComponentEvent.subscribe(() => {
       this.createDynamicComponent();
-    });
-    }    
+      }); 
+      this.dynamicComponentContainer.insert(componentRef.hostView);
+    }        
   }
 }
