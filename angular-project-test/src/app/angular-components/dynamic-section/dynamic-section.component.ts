@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-section',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dynamic-section.component.css']
 })
 export class DynamicSectionComponent {
+
+  @Output() 
+  createDynamicComponentEvent = new EventEmitter<void>();
+
+  triggerCreateDynamicComponent() {
+    this.createDynamicComponentEvent.emit();
+  }
 
 }
