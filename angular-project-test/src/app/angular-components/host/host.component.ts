@@ -28,12 +28,25 @@ export class HostComponent implements AfterViewInit{
 
        // Listen for the event emitted by DynamicComponent
       componentRef.instance.createDynamicComponentEvent.subscribe(() => {
-        this.createDynamicComponent();
-        
-        this.products.push(componentRef.instance.product);
-        console.log('Total product: ' + this.products.length);
+        this.createDynamicComponent();        
+        this.products.push(componentRef.instance.product);        
 
+        console.log('Products: ' + JSON.stringify(this.products));
       }); 
+
+      // Listen for the deleteComponentEvent emitted by DynamicComponent
+      componentRef.instance.deleteDynamicComponentEvent.subscribe(() => {
+        if (this.dynamicComponentContainer !== undefined){
+          console.log('Product to be deleted: ' + JSON.stringify(componentRef.instance.product));
+          const prod = componentRef.instance.product;
+          this.products = this.products.filter((p) => prod.name !== p.name);
+          this.dynamicComponentContainer.remove(this.dynamicComponentContainer.indexOf(componentRef.hostView));
+
+          console.log('Products: ' + JSON.stringify(this.products));
+          console.log('Total: ' + this.products.length);
+        }        
+      });
+      
       this.dynamicComponentContainer.insert(componentRef.hostView);
     }        
   }

@@ -8,8 +8,8 @@ import { Product } from '../host/product.model';
 })
 export class DynamicSectionComponent {
 
-  @Output() 
-  createDynamicComponentEvent = new EventEmitter<void>();  
+  @Output() createDynamicComponentEvent = new EventEmitter<void>();  
+  @Output() deleteDynamicComponentEvent = new EventEmitter<void>();  
 
   product: Product = {
     name:'',
@@ -21,6 +21,11 @@ export class DynamicSectionComponent {
   triggerCreateDynamicComponent() {
     console.log('Adding: ' + JSON.stringify(this.product));
     this.createDynamicComponentEvent.emit();
+  }
+
+  triggerDeleteDynamicComponent() {
+    console.log('Deleting component');
+    this.deleteDynamicComponentEvent.emit();
   }
 
 }
