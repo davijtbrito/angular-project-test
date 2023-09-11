@@ -28,18 +28,31 @@ export class HostComponent implements AfterViewInit{
 
        // Listen for the event emitted by DynamicComponent
       componentRef.instance.createDynamicComponentEvent.subscribe(() => {
-        this.createDynamicComponent();        
-        this.products.push(componentRef.instance.product);        
+        
+        const valueBlank = componentRef.instance.product.name.length === 0 && componentRef.instance.product.description.length === 0;        
+        console.log('valueBlank: ' + valueBlank);
+        
+        if (!valueBlank){
+          this.createDynamicComponent();                
+        
+          const prod = this.products.find((p) => p.name === componentRef.instance.product.name && p.description === componentRef.instance.product.description);
+          console.log('prod: ' + JSON.stringify(prod));
 
+          if (prod === undefined){
+            this.products.push(componentRef.instance.product);        
+          }        
+
+        }        
         console.log('Products: ' + JSON.stringify(this.products));
       }); 
 
       // Listen for the deleteComponentEvent emitted by DynamicComponent
       componentRef.instance.deleteDynamicComponentEvent.subscribe(() => {
-        if (this.dynamicComponentContainer !== undefined){
+        
+        if (this.dynamicComponentContainer !== undefined && this.products.length > 0){
           console.log('Product to be deleted: ' + JSON.stringify(componentRef.instance.product));
           const prod = componentRef.instance.product;
-          this.products = this.products.filter((p) => prod.name !== p.name);
+          this.products = this.products.filter((p) => prod.name !== p.name && prod.description !== p.description);
           this.dynamicComponentContainer.remove(this.dynamicComponentContainer.indexOf(componentRef.hostView));
 
           console.log('Products: ' + JSON.stringify(this.products));

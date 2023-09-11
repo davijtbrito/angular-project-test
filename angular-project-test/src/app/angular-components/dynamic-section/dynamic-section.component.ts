@@ -19,12 +19,12 @@ export class DynamicSectionComponent {
   constructor() {}
 
   triggerCreateDynamicComponent() {
-    console.log('Adding: ' + JSON.stringify(this.product));
+    
     this.createDynamicComponentEvent.emit();
   }
 
   triggerDeleteDynamicComponent() {
-    console.log('Deleting component');
+    
     this.deleteDynamicComponentEvent.emit();
   }
 
