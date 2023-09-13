@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxFileDropEntry } from 'ngx-file-drop';
 import * as Papa from 'papaparse';
 
 
@@ -8,6 +9,8 @@ import * as Papa from 'papaparse';
   styleUrls: ['./file-upload.component.css']
 })
 export class FileUploadComponent {
+  public files: NgxFileDropEntry[] = [];
+
   selectedFile: File | null = null;
 
   onFileSelected(event: any) {
@@ -39,5 +42,45 @@ export class FileUploadComponent {
       console.error('No file selected');
     }
   }
+
+  public dropped(files: NgxFileDropEntry[]) {
+    this.files = files;
+    for (const droppedFile of this.files) {
+
+      // Is it a file?
+      if (droppedFile.fileEntry.isFile) {
+        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
+        fileEntry.file((file: File) => {
+
+          // Here you can access the real file
+          console.log(droppedFile.relativePath, file);
+          this.selectedFile = file;
+          this.uploadFile();
+
+          /**
+          // You could upload it like this:
+          const formData = new FormData()
+          formData.append('logo', file, relativePath)
+
+          // Headers
+          const headers = new HttpHeaders({
+            'security-token': 'mytoken'
+          })
+
+          this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
+          .subscribe(data => {
+            // Sanitized logo returned from backend
+          })
+          **/
+
+        });
+      } else {
+        // It was a directory (empty directories are added, otherwise only files)
+        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
+        console.log(droppedFile.relativePath, fileEntry);
+      }
+    }
+  }
+
   
 }

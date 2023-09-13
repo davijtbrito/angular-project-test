@@ -12,6 +12,7 @@ import { AngularComponentsModule } from './angular-components/angular-components
 import { LayoutExamplesModule } from './layout-examples/layout-examples.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     SharedDataModule,
     AngularComponentsModule,
     LayoutExamplesModule,
+    NgxFileDropModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
