@@ -1,0 +1,20 @@
+<mat-card>    
+    <mat-card-content>      
+        <mat-form-field appearance="fill">
+          <mat-label>Product Name</mat-label>
+          <input matInput [(ngModel)]="product.name" name="productName" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Product Description</mat-label>
+          <input matInput [(ngModel)]="product.description" name="productDescription" required>
+        </mat-form-field>  
+  
+        <button mat-raised-button color="primary" (click)="triggerCreateDynamicComponent()">Add</button>        
+        <button mat-raised-button color="primary" (click)="triggerDeleteDynamicComponent()">Delete</button>   
+      
+    </mat-card-content>
+  </mat-card>
+  
+  
+
