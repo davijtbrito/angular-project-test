@@ -11,12 +11,14 @@ import { ProductListComponent } from './angular-components/product-list/product-
 import { AngularComponentsModule } from './angular-components/angular-components.module';
 import { LayoutExamplesModule } from './layout-examples/layout-examples.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 
 @NgModule({
   declarations: [
     AppComponent,    
-    ProductListComponent
+    ProductListComponent, FileUploadComponent
 
   ],
   imports: [
@@ -25,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedDataModule,
     AngularComponentsModule,
     LayoutExamplesModule,
+    NgxFileDropModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
