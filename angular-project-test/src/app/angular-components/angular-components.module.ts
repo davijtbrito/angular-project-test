@@ -4,10 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
-import { GridComponent } from './grid/grid.component';
 import { AngularComponentsRoutingModule } from './angular-components-routing.module';
 import { AgGridModule } from 'ag-grid-angular';
-import { AgGridExampleComponent } from './ag-grid-example/ag-grid-example.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
@@ -22,9 +20,8 @@ import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
-  declarations: [
-    GridComponent,
-    AgGridExampleComponent,
+  declarations: [   
+    
     StepperComponent,
     StepOneComponent,
     AutoCompleteComponent,
@@ -47,6 +44,6 @@ import { MatCardModule } from '@angular/material/card';
     AngularComponentsRoutingModule,
     CommonModule
   ],
-  exports: [GridComponent, AgGridExampleComponent]
+  exports: []
 })
 export class AngularComponentsModule { }
